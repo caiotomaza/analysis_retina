@@ -34,6 +34,8 @@ python3 -m venv venv
 
 source venv/bin/activate
 
+. .\venv\Scripts\Activate.ps1
+
 python.exe -m pip install --upgrade pip
 
 pip install ipykernel jupyter
