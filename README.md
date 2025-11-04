@@ -29,7 +29,7 @@ Este projeto utiliza técnicas de processamento de imagem e machine learning par
 
 ## ⚙️ Como rodar?
 
-'''bash
+```bash
 python3 -m venv venv
 
 source venv/bin/activate
@@ -39,4 +39,4 @@ python.exe -m pip install --upgrade pip
 pip install ipykernel jupyter
 
 pip install -r requirements.txt
-'''
+```
