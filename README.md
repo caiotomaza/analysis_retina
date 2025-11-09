@@ -30,15 +30,16 @@ Este projeto utiliza técnicas de processamento de imagem e machine learning par
 ## ⚙️ Como rodar?
 
 ```bash
-python3 -m venv venv
+# Windows (PowerShell)
+python -m venv .venv --python=3.11
+.\.venv\Scripts\Activate.ps1
 
-source venv/bin/activate
+# Linux/MacOS
+# python -m venv .venv --python=3.11
+# source .venv/bin/activate
 
-. .\venv\Scripts\Activate.ps1
-
-python.exe -m pip install --upgrade pip
-
+# Comum para todos os sistemas
+python -m pip install --upgrade pip
+pip install --upgrade setuptools wheel
 pip install ipykernel jupyter
-
-pip install -r requirements.txt
 ```
