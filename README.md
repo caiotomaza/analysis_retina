@@ -29,17 +29,53 @@ Este projeto utiliza técnicas de processamento de imagem e machine learning par
 
 ## ⚙️ Como rodar?
 
+### 🪟 Windows
+
 ```bash
-# Windows (PowerShell)
-python -m venv .venv --python=3.11
+# Etapa 0: Corrige problema de política de execução do PowerShell para permitir a ativação (temporário)
+Set-ExecutionPolicy RemoteSigned -Scope Process
+
+# Etapa 1: Cria o ambiente virtual chamado .venv usando especificamente o Python 3.11
+# O comando "py -3.11" garante que o interpretador 3.11 seja usado
+py -3.11 -m venv .venv
+
+# Etapa 2: Ativa o ambiente virtual para que os comandos 'pip' instalem APENAS nele
 .\.venv\Scripts\Activate.ps1
+# *** Verifique se o seu prompt mudou para (.venv) PS C:\... ***
 
-# Linux/MacOS
-# python -m venv .venv --python=3.11
-# source .venv/bin/activate
-
-# Comum para todos os sistemas
+# Etapa 3: Atualiza o pip dentro do ambiente (Comum para todos os sistemas)
 python -m pip install --upgrade pip
+
+# Etapa 4: Instala/Atualiza as ferramentas de construção
 pip install --upgrade setuptools wheel
+
+# Etapa 5: Instala os pacotes desejados
 pip install ipykernel jupyter
+```
+
+### 🪟 Linux/macOS
+
+```bash
+# 1. Cria o ambiente virtual chamado .venv usando especificamente o Python 3.11
+# Este comando assume que 'python3.11' está disponível no seu PATH
+python3.11 -m venv .venv
+
+# 2. Ativa o ambiente virtual (usa 'source' no Linux/macOS)
+source .venv/bin/activate
+# *** Verifique se o seu prompt mudou para (.venv) ***
+
+# 3. Atualiza o pip dentro do ambiente
+python -m pip install --upgrade pip
+
+# 4. Instala/Atualiza as ferramentas de construção
+pip install --upgrade setuptools wheel
+
+# 5. Instala os pacotes desejados
+pip install ipykernel jupyter
+```
+
+### 💀 Como desativas o ambiente virtual no terminal?
+
+```bash
+deactivate
 ```
